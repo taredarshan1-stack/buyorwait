@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BUY OR WAIT?</title>
+
+<style>
+
+body{
+background:#0f0f0f;
+font-family:Arial, sans-serif;
+color:white;
+text-align:center;
+padding:20px;
+margin:0;
+}
+
+h1{
+font-size:50px;
+margin-top:40px;
+color:#00ff99;
+}
+
+p{
+font-size:18px;
+color:#cccccc;
+}
+
+input{
+width:85%;
+max-width:500px;
+padding:16px;
+font-size:18px;
+border:none;
+border-radius:12px;
+margin-top:25px;
+outline:none;
+background:#1f1f1f;
+color:white;
+}
+
+button{
+padding:16px 35px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:12px;
+background:#00ff99;
+cursor:pointer;
+margin-top:20px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.card{
+background:#1b1b1b;
+padding:30px;
+border-radius:20px;
+max-width:650px;
+margin:40px auto;
+box-shadow:0 0 20px rgba(0,255,153,0.2);
+}
+
+#result{
+font-size:40px;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+#details{
+font-size:20px;
+line-height:1.8;
+color:#dddddd;
+}
+
+.footer{
+margin-top:60px;
+font-size:14px;
+color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>BUY OR WAIT?</h1>
+
+<p>
+Search anything and get smart buying advice instantly.
+</p>
+
+<input type="text" id="product" placeholder="Search product, gold, crypto, property...">
+
+<br>
+
+<button onclick="checkProduct()">CHECK NOW</button>
+
+<div class="card">
+
+<div id="result">
+🟡 READY
+</div>
+
+<div id="details">
+Enter any product name to get AI-style buying advice.
+</div>
+
+</div>
+
+<div class="footer">
+Future Smart Decision Engine 🚀
+</div>
+
+<script>
+
+function checkProduct(){
+
+let product=document.getElementById("product").value.toLowerCase();
+
+let result=document.getElementById("result");
+let details=document.getElementById("details");
+
+
+// PHONES
+
+if(
+product.includes("iphone") ||
+product.includes("samsung") ||
+product.includes("oneplus") ||
+product.includes("realme") ||
+product.includes("redmi") ||
+product.includes("vivo") ||
+product.includes("oppo") ||
+product.includes("mobile")
+){
+
+result.innerHTML="🔴 WAIT";
+
+details.innerHTML="
+Expected Price Drop: 5% to 15%<br><br>
+Best Time To Buy:<br>
+Festival sales and flash deals.<br><br>
+Current market prices are slightly high.
+";
+
+}
+
+
+// LAPTOPS
+
+else if(
+product.includes("laptop") ||
+product.includes("macbook") ||
+product.includes("hp") ||
+product.includes("dell") ||
+product.includes("lenovo") ||
+product.includes("asus")
+){
+
+result.innerHTML="🟢 BUY NOW";
+
+details.innerHTML="
+Laptop prices are currently stable.<br><br>
+Good value deals available now.<br><br>
+Recommended time to purchase.
+";
+
+}
+
+
+// GAMING
+
+else if(
+product.includes("ps5") ||
+product.includes("xbox") ||
+product.includes("gaming")
+){
+
+result.innerHTML="🟡 WAIT";
+
+details.innerHTML="
+Gaming product discounts may arrive soon.<br><br>
+Upcoming sales can reduce prices further.
+";
+
+}
+
+
+// TV
+
+else if(
+product.includes("tv") ||
+product.includes("smart tv") ||
+product.includes("sony") ||
+product.includes("lg")
+){
+
+result.innerHTML="🟢 BUY NOW";
+
+details.innerHTML="
+TV prices are currently attractive.<br><br>
+Several brands are offering good deals now.
+";
+
+}
+
+
+// AUDIO PRODUCTS
+
+else if(
+product.includes("earbuds") ||
+product.includes("boat") ||
+product.includes("airpods") ||
+product.includes("headphone")
+){
+
+result.innerHTML="🔴 WAIT";
+
+details.innerHTML="
+Audio gadgets frequently receive discounts.<br><br>
+Expected Drop: ₹500 to ₹2000.
+";
+
+}
+
+
+// REAL ESTATE
+
+else if(
+product.includes("flat") ||
+product.includes("house") ||
+product.includes("plot") ||
+product.includes("property") ||
+product.includes("apartment") ||
+product.includes("real estate")
+){
+
+result.innerHTML="🟡 ANALYZE LOCATION";
+
+details.innerHTML="
+Real estate depends heavily on:<br><br>
+
+• Location growth<br>
+• Metro/connectivity<br>
+• Future projects<br>
+• Demand and supply<br><br>
+
+Fast-growing area:<br>
+🟢 BUY NOW<br><br>
+
+Overpriced market:<br>
+🔴 WAIT
+";
+
+}
+
+
+// GOLD
+
+else if(
+product.includes("gold") ||
+product.includes("silver")
+){
+
+result.innerHTML="🟢 BUY NOW";
+
+details.innerHTML="
+Precious metals remain strong long-term assets.<br><br>
+Market volatility may increase prices further.
+";
+
+}
+
+
+// CRYPTO
+
+else if(
+product.includes("bitcoin") ||
+product.includes("crypto") ||
+product.includes("ethereum")
+){
+
+result.innerHTML="🟡 HIGH RISK";
+
+details.innerHTML="
+Crypto markets are highly volatile.<br><br>
+Invest carefully and monitor trends daily.
+";
+
+}
+
+
+// CARS
+
+else if(
+product.includes("car") ||
+product.includes("bmw") ||
+product.includes("audi") ||
+product.includes("tesla") ||
+product.includes("ertiga")
+){
+
+result.innerHTML="🔴 WAIT";
+
+details.innerHTML="
+New launches and festive offers may reduce prices.<br><br>
+Waiting could save more money.
+";
+
+}
+
+
+// DEFAULT
+
+else{
+
+result.innerHTML="🟡 ANALYZING";
+
+details.innerHTML="
+AI is analyzing market trends.<br><br>
+More smart predictions coming soon.
+";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
